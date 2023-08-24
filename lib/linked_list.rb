@@ -1,5 +1,24 @@
-#append will make new node and assign to the head 
-#(attach to position 0)
+class LinkedList
+  attr_reader :head
+
+  def initialize
+    @head = nil
+  end
+
+  def append(data)
+    node = Node.new(data)
+
+    if @head == nil
+      @head = node
+    else
+      until @head.next_node == nil do
+       
+      end
+    end
+  end
+end
+
+#append will make new node and assign to the head if no head exists
 
 #head will give head node
 
