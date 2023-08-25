@@ -13,7 +13,7 @@ RSpec.describe Node do
     expect(node1.data).to eq("plop")
   end
 
-  it 'has no linked nodes' do
+  it 'has no linked nodes by default' do
     node1 = Node.new("plop")
 
     expect(node1.next_node).to be nil
