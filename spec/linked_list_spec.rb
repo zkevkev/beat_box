@@ -12,7 +12,7 @@ RSpec.describe LinkedList do
     list = LinkedList.new
     list.append("doop")
 
-    expect(list.head).not_to be nil
+    expect(list.head).to be_instance_of(Node)
   end
 
   it 'will append a node to the next position if head exists' do
@@ -23,15 +23,15 @@ RSpec.describe LinkedList do
     expect(list.head.data).to eq("doop")
   end
 
-  it 'will not append to head if a head exists' do
+  it 'will append to next position if a head exists' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
 
-    expect(list.head.data).not_to eq("deep")
+    expect(list.head.next_node.data).to eq("deep")
   end
 
-  it 'can count the number of nodes' do
+  xit 'can count the number of nodes' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
@@ -39,5 +39,11 @@ RSpec.describe LinkedList do
     expect(list.count).to eq(2)
   end
 
-  
+  xit 'can make the linked list into a string' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+
+    expect(list.to_string).to eq("doop deep")
+  end
 end

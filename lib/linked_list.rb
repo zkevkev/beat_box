@@ -11,8 +11,8 @@ class LinkedList
     if @head == nil
       @head = node
     else
-      until @head.next_node == nil do
-       
+      while @head.next_node != nil do
+       @head = @head.next_node
       end
     end
   end
