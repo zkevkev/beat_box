@@ -38,12 +38,24 @@ class LinkedList
   end
 
   def to_string
+    string_conversion = ""
     current_node = @head
+
+      while current_node != nil do
+        string_conversion += current_node.data
+        string_conversion += " " if current_node.next_node != nil
+        current_node = current_node.next_node
+      end
+
+    string_conversion
+  end
+
+  def prepend(data)
+    current_node = @head
+
+
   end
 end
-
-#count will start and head position and iterate through 
-#nodes until it returns nil (each node will only know the next node)
 
 #insert will will iterate until finding given position 
 #and append node there

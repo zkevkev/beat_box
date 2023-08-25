@@ -42,7 +42,18 @@ RSpec.describe LinkedList do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
+    list.append("beep")
 
-    expect(list.to_string).to eq("doop deep")
+    expect(list.to_string).to eq("doop deep beep")
+  end
+
+  it 'can add nodes to the head position' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+
+    list.prepend("beep")
+
+    expect(list.to_string).to eq ("beep doop deep")
   end
 end
