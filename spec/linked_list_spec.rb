@@ -1,5 +1,6 @@
 require "./lib/node"
 require "./lib/linked_list"
+require "pry"
 
 RSpec.describe LinkedList do 
   it 'has no head when created' do
@@ -32,6 +33,13 @@ RSpec.describe LinkedList do
     expect(list.count).to eq(2)
   end
 
+  it 'can count the number of nodes if only a head exists' do
+    list = LinkedList.new
+    list.append("doop")
+
+    expect(list.count).to eq(1)
+  end
+
   it 'will count no nodes if LinkedList object is empty' do
     list = LinkedList.new
 
@@ -55,5 +63,35 @@ RSpec.describe LinkedList do
     list.prepend("beep")
 
     expect(list.to_string).to eq ("beep doop deep")
+  end
+
+  it 'can insert a node at a specific position' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+
+    list.insert(1, "beep")
+
+    expect(list.to_string).to eq("doop beep deep")
+  end
+
+  xit 'can insert a node at another position' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+
+    list.insert(2, "beep")
+
+    expect(list.to_string).to eq("doop deep beep")
+  end
+
+  xit 'can insert a node at the head' do 
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+
+    list.insert(0, "beep")
+
+    expect(list.to_string).to eq("beep doop deep")
   end
 end

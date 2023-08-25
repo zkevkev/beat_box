@@ -21,10 +21,10 @@ class LinkedList
     end
   end
 
-  def count
-    node_counter = 1
+  def count 
     current_node = @head
-
+    node_counter = 1
+   
     if current_node == nil
       node_counter = 0
     else
@@ -41,11 +41,11 @@ class LinkedList
     string_conversion = ""
     current_node = @head
 
-      while current_node != nil do
-        string_conversion += current_node.data
-        string_conversion += " " if current_node.next_node != nil
-        current_node = current_node.next_node
-      end
+    while current_node != nil do
+      string_conversion += current_node.data
+      string_conversion += " " if current_node.next_node != nil
+      current_node = current_node.next_node
+    end
 
     string_conversion
   end
@@ -60,12 +60,16 @@ class LinkedList
       @head = new_node
     end
   end
+
+  def insert(position, data)
+    new_node = Node.new(data)
+
+    
+  end
 end
 
 #insert will will iterate until finding given position 
 #and append node there
-
-#prepend will add a new head (ie it will append at position 0)
 
 #find will take an index position and play back the given 
 #stretch of nodes
