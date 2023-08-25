@@ -6,23 +6,41 @@ class LinkedList
   end
 
   def append(data)
-    node = Node.new(data)
+    new_node = Node.new(data)
 
     if @head == nil
-      @head = node
+      @head = new_node
     else
-      while @head.next_node != nil do
-       @head = @head.next_node
+      current_node = @head
+
+      until current_node.next_node == nil do
+       current_node = current_node.next_node
       end
+
+      current_node.next_node = new_node
     end
   end
+
+  def count
+    node_counter = 1
+    current_node = @head
+
+    if current_node == nil
+      node_counter = 0
+    else
+      until current_node.next_node == nil do
+        current_node = current_node.next_node
+        node_counter += 1
+      end
+    end
+    
+    node_counter
+  end
+
+  def to_string
+    current_node = @head
+  end
 end
-
-#append will make new node and assign to the head if no head exists
-
-#head will give head node
-
-#next_node will give tail node
 
 #count will start and head position and iterate through 
 #nodes until it returns nil (each node will only know the next node)

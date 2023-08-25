@@ -11,13 +11,6 @@ RSpec.describe LinkedList do
   it 'will append a node to the head if linked list has no head' do
     list = LinkedList.new
     list.append("doop")
-
-    expect(list.head).to be_instance_of(Node)
-  end
-
-  it 'will append a node to the next position if head exists' do
-    list = LinkedList.new
-    list.append("doop")
     list.append("deep")
 
     expect(list.head.data).to eq("doop")
@@ -31,7 +24,7 @@ RSpec.describe LinkedList do
     expect(list.head.next_node.data).to eq("deep")
   end
 
-  xit 'can count the number of nodes' do
+  it 'can count the number of nodes' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
@@ -39,7 +32,13 @@ RSpec.describe LinkedList do
     expect(list.count).to eq(2)
   end
 
-  xit 'can make the linked list into a string' do
+  it 'will count no nodes if LinkedList object is empty' do
+    list = LinkedList.new
+
+    expect(list.count).to eq(0)
+  end
+
+  it 'can make the linked list into a string' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
