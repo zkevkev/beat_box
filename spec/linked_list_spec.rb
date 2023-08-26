@@ -122,7 +122,7 @@ describe "#insert" do
 
     list.insert(2, "beep")
 
-    expect(list.to_string).to eq("doop deep beep")
+    expect(list.to_string).to eq("doop deep beep boop")
   end
 
   it 'can insert a node at the head' do 
