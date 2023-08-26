@@ -130,18 +130,21 @@ class LinkedList
     if @head == nil
       return
     end
-#need to add something here to store removed node data and then call it at the end
+
+    removed_data = ""
+
     if @head.next_node == nil
+      removed_data += @head.data
       @head = nil
     else
       current_node = @head
       until current_node.next_node.next_node == nil do
         current_node = current_node.next_node
       end
+      removed_data += current_node.next_node.data
       current_node.next_node = nil
     end
+
+    removed_data
   end
 end
-
-
-#BeatBox LinkedList.new 

@@ -242,4 +242,11 @@ describe "#pop" do
 
     expect(list.pop).to be nil
   end
+
+  it 'will return removed data if list only has a head' do 
+    list = LinkedList.new
+    list.append("doop")
+
+    expect(list.pop).to eq("doop")
+  end
 end
