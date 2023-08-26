@@ -228,12 +228,18 @@ describe "#pop" do
     expect(list.to_string).to eq("doop deep")
   end
 
-  xit 'will return the last node after it is removed' do
+  it 'will return the last node after it is removed' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
     list.append("boop")
 
     expect(list.pop).to eq("boop")
+  end
+
+  xit 'will do nothing if the list is empty' do
+    list = LinkedList.new
+
+    expect(list.pop).to be nil
   end
 end

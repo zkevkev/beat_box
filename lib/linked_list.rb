@@ -127,7 +127,19 @@ class LinkedList
   end
 
   def pop
-    
+    if @head == nil
+      return
+    end
+#need to add something here to store removed node data and then call it at the end
+    if @head.next_node == nil
+      @head = nil
+    else
+      current_node = @head
+      until current_node.next_node.next_node == nil do
+        current_node = current_node.next_node
+      end
+      current_node.next_node = nil
+    end
   end
 end
 
