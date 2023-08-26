@@ -114,7 +114,7 @@ describe "#insert" do
     expect(list.to_string).to eq("doop beep deep")
   end
 
-  xit 'can insert a node at another position' do
+  it 'can insert a node at another position' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
@@ -125,7 +125,7 @@ describe "#insert" do
     expect(list.to_string).to eq("doop deep beep")
   end
 
-  xit 'can insert a node at the head' do 
+  it 'can insert a node at the head' do 
     list = LinkedList.new
     list.append("doop")
     list.append("deep")

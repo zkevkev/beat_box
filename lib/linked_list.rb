@@ -75,7 +75,8 @@ class LinkedList
       current_node = current_node.next_node
       end
 
-
+      new_node.next_node = current_node.next_node
+      current_node.next_node = new_node
     end
   end
 end
