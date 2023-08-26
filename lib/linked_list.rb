@@ -65,10 +65,17 @@ class LinkedList
     new_node = Node.new(data)
     
     if @head == nil
-      new_node.next_node = @head
       @head = new_node
     else
-      
+      current_node = @head
+      (position - 1).times do
+        if current_node == nil
+          break
+        end
+      current_node = current_node.next_node
+      end
+
+
     end
   end
 end
