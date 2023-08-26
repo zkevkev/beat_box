@@ -131,7 +131,17 @@ describe "#insert" do
     list.append("deep")
 
     list.insert(0, "beep")
-
+    
     expect(list.to_string).to eq("beep doop deep")
+  end
+
+  it 'can insert a node at the tail' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+
+    list.insert(2, "beep")
+
+    expect(list.to_string).to eq("doop deep beep")
   end
 end
