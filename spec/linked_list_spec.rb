@@ -155,3 +155,35 @@ describe "#insert" do
     expect(list.to_string).to eq("doop deep")
   end
 end
+
+describe '#find' do
+  it 'starts at a specific position and returns given length of nodes' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    list.append("boop")
+    list.append("beep")
+
+    expect(list.find(1, 2)).to eq("deep boop")
+  end
+
+  xit 'can return the entire list' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    list.append("boop")
+    list.append("beep")
+
+    expect(list.find(0, 4)).to eq("doop deep boop beep")
+  end
+
+  xit 'will not return any non-existent nodes if called to' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    list.append("boop")
+    list.append("beep")
+
+    expect(list.find(3, 4)).to eq("beep")
+  end
+end

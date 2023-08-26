@@ -82,10 +82,28 @@ class LinkedList
       end
     end
   end
-end
 
-#insert will will iterate until finding given position 
-#and append node there
+  def find(start_position, length)
+    if @head == nil
+      #edge case if the list is empty
+    end
+
+    current_node = (start_position - 1).times do
+      if current_node == nil
+        break
+      end
+    current_node = current_node.next_node
+    end
+    
+    (length - 1).map do
+      if current_node == nil
+        break
+      end
+    current_node = current_node.next_node
+    #need to use to_string method somewhere around here
+    end
+  end
+end
 
 #find will take an index position and play back the given 
 #stretch of nodes
