@@ -97,6 +97,7 @@ class LinkedList
     end
     
     string_output = ""
+    length_counter = 0
     length.times do
       if current_node == nil
         break
@@ -105,7 +106,7 @@ class LinkedList
       if current_node.next_node != nil #add logic here for mid-list sampling
         string_output += " "
         #this is putting a space when sampling in the middle of the list, needs
-        #to be debugged
+        #to be debugged (use counter to track length? Use string interpolation?)
       end
       current_node = current_node.next_node
     end

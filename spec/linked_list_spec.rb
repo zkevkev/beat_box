@@ -157,7 +157,7 @@ describe "#insert" do
 end
 
 describe "#find" do
-  xit 'starts at a specific position and returns given length of nodes' do
+  it 'starts at a specific position and returns given length of nodes' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")

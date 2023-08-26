@@ -2,6 +2,6 @@ class BeatBox
   attr_reader :list
 
   def initialize
-    @list = List.new
+    @list = LinkedList.new
   end
 end
