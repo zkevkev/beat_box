@@ -125,6 +125,10 @@ class LinkedList
 
     return false
   end
+
+  def pop
+    
+  end
 end
 
 

@@ -215,3 +215,25 @@ describe "#includes?" do
     expect(list.includes?("dep")).to be false
   end
 end
+
+describe "#pop" do
+  it 'will remove the last node' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    list.append("boop")
+
+    list.pop
+
+    expect(list.to_string).to eq("doop deep")
+  end
+
+  xit 'will return the last node after it is removed' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    list.append("boop")
+
+    expect(list.pop).to eq("boop")
+  end
+end
