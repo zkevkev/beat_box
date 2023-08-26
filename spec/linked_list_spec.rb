@@ -44,7 +44,7 @@ describe "#append" do
 end
 
 describe "#count" do
-  it 'can count the number of nodes' do
+  it 'will count the number of nodes' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
@@ -52,7 +52,7 @@ describe "#count" do
     expect(list.count).to eq(2)
   end
 
-  it 'can count the number of nodes if only a head exists' do
+  it 'will count the number of nodes if only a head exists' do
     list = LinkedList.new
     list.append("doop")
 
@@ -195,7 +195,7 @@ describe "#find" do
 end
 
 describe "#includes?" do
-  it 'can determine whether specific data exists in a list' do
+  it 'will determine whether specific data exists in a list' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
@@ -237,7 +237,7 @@ describe "#pop" do
     expect(list.pop).to eq("boop")
   end
 
-  xit 'will do nothing if the list is empty' do
+  it 'will do nothing if the list is empty' do
     list = LinkedList.new
 
     expect(list.pop).to be nil
