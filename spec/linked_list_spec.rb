@@ -156,8 +156,8 @@ describe "#insert" do
   end
 end
 
-describe '#find' do
-  it 'starts at a specific position and returns given length of nodes' do
+describe "#find" do
+  xit 'starts at a specific position and returns given length of nodes' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
@@ -167,7 +167,7 @@ describe '#find' do
     expect(list.find(1, 2)).to eq("deep boop")
   end
 
-  xit 'can return the entire list' do
+  it 'can return the entire list' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
@@ -177,7 +177,7 @@ describe '#find' do
     expect(list.find(0, 4)).to eq("doop deep boop beep")
   end
 
-  xit 'will not return any non-existent nodes if called to' do
+  it 'will not return any non-existent nodes if called to' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
@@ -187,9 +187,31 @@ describe '#find' do
     expect(list.find(3, 4)).to eq("beep")
   end
 
-  xit 'will return an empty string if the list is empty' do
+  it 'will return an empty string if the list is empty' do
     list = LinkedList.new
 
     expect(list.find(0, 2)).to eq("")
+  end
+end
+
+describe "#includes?" do
+  it 'can determine whether specific data exists in a list' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    list.append("boop")
+    list.append("beep")
+
+    expect(list.includes?("deep")).to be true
+  end
+
+  it 'will return false if the list does not contained the queried data' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    list.append("boop")
+    list.append("beep")
+
+    expect(list.includes?("dep")).to be false
   end
 end

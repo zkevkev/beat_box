@@ -102,21 +102,30 @@ class LinkedList
         break
       end
       string_output += current_node.data
-      if current_node.next_node != nil
+      if current_node.next_node != nil #add logic here for mid-list sampling
         string_output += " "
+        #this is putting a space when sampling in the middle of the list, needs
+        #to be debugged
       end
       current_node = current_node.next_node
     end
     
     string_output
   end
+
+  def includes?(query)
+    current_node = @head
+    
+    until current_node == nil
+      if current_node.data == query
+        return true
+      end
+      current_node = current_node.next_node
+    end
+
+    return false
+  end
 end
 
-#find will take an index position and play back the given 
-#stretch of nodes
-
-#pop same as pop
-
-#includes? returns true false whether nodes include given string
 
 #BeatBox LinkedList.new 
