@@ -41,7 +41,7 @@ class LinkedList
     string_conversion = ""
     current_node = @head
 
-    while current_node != nil do
+    until current_node == nil do
       string_conversion += current_node.data
       string_conversion += " " if current_node.next_node != nil
       current_node = current_node.next_node
@@ -63,8 +63,13 @@ class LinkedList
 
   def insert(position, data)
     new_node = Node.new(data)
-
     
+    if @head == nil
+      new_node.next_node = @head
+      @head = new_node
+    else
+      
+    end
   end
 end
 

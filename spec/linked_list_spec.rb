@@ -20,9 +20,9 @@ describe "#append" do
   it 'will append a node to the head if linked list has no head' do
     list = LinkedList.new
     list.append("doop")
-    list.append("deep")
 
     expect(list.head.data).to eq("doop")
+    expect(list.head.next_node).to be nil
   end
 
   it 'will append to tail position if a head exists' do
@@ -67,7 +67,7 @@ describe "#count" do
 end
 
 describe "#to_string" do
-  it 'can make the linked list into a string' do
+  it 'can make the linked list into a string with spaces between node data' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
@@ -104,7 +104,7 @@ describe "#prepend" do
 end
 
 describe "#insert" do
-  xit 'can insert a node at a specific position' do
+  it 'can insert a node at a specific position' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
@@ -118,6 +118,7 @@ describe "#insert" do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
+    list.append("boop")
 
     list.insert(2, "beep")
 
