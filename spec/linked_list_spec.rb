@@ -104,7 +104,7 @@ describe "#prepend" do
 end
 
 describe "#insert" do
-  it 'can insert a node at a specific position' do
+  it 'can add a node at a specific position' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
@@ -114,7 +114,7 @@ describe "#insert" do
     expect(list.to_string).to eq("doop beep deep")
   end
 
-  it 'can insert a node at another position' do
+  it 'can add a node at another position' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
@@ -125,17 +125,17 @@ describe "#insert" do
     expect(list.to_string).to eq("doop deep beep boop")
   end
 
-  it 'can insert a node at the head' do 
+  it 'can add a node at the head' do 
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
 
     list.insert(0, "beep")
-    
+
     expect(list.to_string).to eq("beep doop deep")
   end
 
-  it 'can insert a node at the tail' do
+  it 'can add a node at the tail' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
@@ -143,5 +143,15 @@ describe "#insert" do
     list.insert(2, "beep")
 
     expect(list.to_string).to eq("doop deep beep")
+  end
+
+  it 'will not add to a position that does not exist' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+
+    list.insert(5, "beep")
+
+    expect(list.to_string).to eq("doop deep")
   end
 end

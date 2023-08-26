@@ -76,8 +76,10 @@ class LinkedList
       current_node = current_node.next_node
       end
 
+      if current_node != nil
       new_node.next_node = current_node.next_node
       current_node.next_node = new_node
+      end
     end
   end
 end
