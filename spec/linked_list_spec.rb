@@ -186,4 +186,10 @@ describe '#find' do
 
     expect(list.find(3, 4)).to eq("beep")
   end
+
+  xit 'will return an empty string if the list is empty' do
+    list = LinkedList.new
+
+    expect(list.find(0, 2)).to eq("")
+  end
 end

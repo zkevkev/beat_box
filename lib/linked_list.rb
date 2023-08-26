@@ -85,23 +85,30 @@ class LinkedList
 
   def find(start_position, length)
     if @head == nil
-      #edge case if the list is empty
+      ""
     end
 
-    current_node = (start_position - 1).times do
+    current_node = @head
+    start_position.times do
       if current_node == nil
         break
       end
     current_node = current_node.next_node
     end
     
-    (length - 1).map do
+    string_output = ""
+    length.times do
       if current_node == nil
         break
       end
-    current_node = current_node.next_node
-    #need to use to_string method somewhere around here
+      string_output += current_node.data
+      if current_node.next_node != nil
+        string_output += " "
+      end
+      current_node = current_node.next_node
     end
+    
+    string_output
   end
 end
 
