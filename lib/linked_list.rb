@@ -21,7 +21,6 @@ class LinkedList
     end
   end
 
-  #should try to solve this recursively if you have time (needs research)
   def count 
     current_node = @head
     node_counter = 0
@@ -62,6 +61,8 @@ class LinkedList
     end
   end
 
+    #should try to solve this recursively if you have time (needs research)
+    #could use count for position potentially
   def insert(position, data)
     new_node = Node.new(data)
     
