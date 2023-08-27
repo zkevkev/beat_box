@@ -63,6 +63,15 @@ describe "#append" do
     expect(bb.list.head.data).to eq("deep")
     expect(bb.count).to eq(6)
   end
+
+  it 'can add a large amount of beats in one argument' do
+    bb = BeatBox.new
+    
+    bb.append("deep doo ditt woo hoo shu boo")
+
+    expect(bb.list.head.data).to eq("deep")
+    expect(bb.count).to eq(7)
+  end
 end
 
 describe "#play" do

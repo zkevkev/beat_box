@@ -19,12 +19,14 @@ class BeatBox
   end
 
   def play
-    #need to figure out how to define length, could use very large number 
-    #since #find will not add any non-existent positions (needs research)
-    #could likely be done using another method
-    beats = @list.find(0, )
-    #this is definitely not the way to do this. Go to sleep!
-    binding.pry
-    `say -r 500 -v Boing "#{beats}"`
+    current_node = @list.head
+
+    until current_node == nil
+      beats current_node
+      #system command?
+      current_node = current_node.next_node
+    end
+
+    say -r 500 -v Boing "#{beats}"
   end
 end
