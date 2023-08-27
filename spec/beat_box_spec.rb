@@ -24,8 +24,22 @@ describe "#count" do
     bb.list.append("doop")
     bb.list.append("deep")
     bb.list.append("boop")
-#this needs a better test, this test is essentially hardcoded
-    expect(bb.count).to eq(bb.list.count)
+
+    expect(bb.count).to eq(3)
+  end
+
+  it 'will return 0 if the list is empty' do
+    bb = BeatBox.new
+
+    expect(bb.count).to eq(0)
+  end
+
+  it 'will count if there is only a head' do
+    bb = BeatBox.new
+
+    bb.list.append("doop")
+
+    expect(bb.count).to eq(1)
   end
 end
 
