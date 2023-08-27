@@ -15,7 +15,21 @@ RSpec.describe BeatBox do
     expect(bb.list).to be_instance_of(LinkedList)
     expect(bb.list.head).to be nil
   end
+end
 
+describe "#count" do
+  it 'will count the nodes in @list' do
+    bb = BeatBox.new
+
+    bb.list.append("doop")
+    bb.list.append("deep")
+    bb.list.append("boop")
+
+    expect(bb.count).to eq(bb.list.count)
+  end
+end
+
+describe "#append" do
   it 'can append multiple nodes using one command' do
     bb = BeatBox.new
 
