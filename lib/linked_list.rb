@@ -5,6 +5,15 @@ class LinkedList
     @head = nil
   end
 
+  #need to figure out how to imlplement this into append and count
+  def iterate_until_tail
+    current_node = @head
+
+    until current_node.next_node == nil do
+      current_node = current_node.next_node
+    end
+  end
+
   def append(data)
     new_node = Node.new(data)
 
@@ -61,8 +70,6 @@ class LinkedList
     end
   end
 
-    #should try to solve this recursively if you have time (needs research)
-    #could use count for position potentially
   def insert(position, data)
     new_node = Node.new(data)
     

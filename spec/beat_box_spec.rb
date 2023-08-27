@@ -58,6 +58,6 @@ describe "#play" do
     bb.append("deep doo ditt")
     bb.append("woo hoo shu")
 
-    #figure out how to even test this
+    expect(bb.respond_to?(:play)).to be true
   end
 end
