@@ -19,14 +19,7 @@ class BeatBox
   end
 
   def play
-    current_node = @list.head
-
-    until current_node == nil
-      beats current_node
-      #system command?
-      current_node = current_node.next_node
-    end
-
-    say -r 500 -v Boing "#{beats}"
+    beats = @list.to_string
+    `say -r 500 -v Boing "#{beats}"`
   end
 end
