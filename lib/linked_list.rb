@@ -39,6 +39,7 @@ class LinkedList
         current_node = current_node.next_node
         node_counter += 1
       end
+      
       node_counter
     end
   end

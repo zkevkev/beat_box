@@ -64,6 +64,18 @@ describe "#count" do
 
     expect(list.count).to eq(0)
   end
+
+  it 'will count a large number of nodes' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    list.append("boop")
+    list.append("beep")
+    list.append("shi")
+    list.append("boo")
+
+    expect(list.count).to eq(6)
+  end
 end
 
 describe "#to_string" do
@@ -80,6 +92,13 @@ describe "#to_string" do
     list = LinkedList.new
 
     expect(list.to_string).to eq("")
+  end
+
+  it 'will convert just the head' do
+    list = LinkedList.new
+    list.append("doop")
+
+    expect(list.to_string).to eq("doop")
   end
 end
 
@@ -205,7 +224,7 @@ describe "#includes?" do
     expect(list.includes?("deep")).to be true
   end
 
-  it 'will return false if the list does not contained the queried data' do
+  it 'will return false if the list does not contain the queried data' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
@@ -214,6 +233,8 @@ describe "#includes?" do
 
     expect(list.includes?("dep")).to be false
   end
+
+  #smoke test here?
 end
 
 describe "#pop" do
