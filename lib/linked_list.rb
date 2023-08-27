@@ -5,13 +5,15 @@ class LinkedList
     @head = nil
   end
 
-  #need to figure out how to imlplement this into append and count
-  def iterate_until_tail
-    current_node = @head
+  #can I modify this to use other places than append?
+  def iterate_until_tail(start_node)
+    current_node = start_node
 
     until current_node.next_node == nil do
       current_node = current_node.next_node
     end
+
+    current_node
   end
 
   def append(data)
@@ -20,13 +22,8 @@ class LinkedList
     if @head == nil
       @head = new_node
     else
-      current_node = @head
-
-      until current_node.next_node == nil do
-       current_node = current_node.next_node
-      end
-
-      current_node.next_node = new_node
+      tail = iterate_until_tail(@head)
+      tail.next_node = new_node
     end
   end
 
