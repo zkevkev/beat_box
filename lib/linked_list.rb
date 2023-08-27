@@ -24,18 +24,18 @@ class LinkedList
   #should try to solve this recursively if you have time (needs research)
   def count 
     current_node = @head
-    node_counter = 1
+    node_counter = 0
    
     if current_node == nil
-      node_counter = 0
+      node_counter
     else
+      node_counter += 1
       until current_node.next_node == nil do
         current_node = current_node.next_node
         node_counter += 1
       end
+      node_counter
     end
-    
-    node_counter
   end
 
   def to_string
