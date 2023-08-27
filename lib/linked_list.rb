@@ -21,6 +21,7 @@ class LinkedList
     end
   end
 
+  #should try to solve this recursively if you have time (needs research)
   def count 
     current_node = @head
     node_counter = 1

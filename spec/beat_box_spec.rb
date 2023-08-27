@@ -24,7 +24,7 @@ describe "#count" do
     bb.list.append("doop")
     bb.list.append("deep")
     bb.list.append("boop")
-
+#this needs a better test, this test is essentially hardcoded
     expect(bb.count).to eq(bb.list.count)
   end
 end
@@ -48,5 +48,16 @@ describe "#append" do
 
     expect(bb.list.head.data).to eq("deep")
     expect(bb.count).to eq(6)
+  end
+end
+
+describe "#play" do
+  it 'has sick beats' do
+    bb = BeatBox.new
+
+    bb.append("deep doo ditt")
+    bb.append("woo hoo shu")
+
+    #figure out how to even test this
   end
 end
