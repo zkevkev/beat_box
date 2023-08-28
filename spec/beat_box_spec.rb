@@ -85,3 +85,20 @@ describe "#play" do
     bb.play
   end
 end
+
+describe "#all" do
+  it 'returns the entire list of beats as a string' do
+    bb = BeatBox.new
+
+    bb.append("deep doo ditt")
+    bb.append("woo hoo shu")
+
+    expect(bb.all).to eq("deep doo ditt woo hoo shu")
+  end
+
+  it 'returns an empty string if list is empty' do
+    bb = BeatBox.new
+
+    expect(bb.all).to eq("")
+  end
+end
