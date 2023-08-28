@@ -1,8 +1,9 @@
 class BeatBox
   attr_reader :list
 
-  def initialize
+  def initialize(string_to_append = nil)
     @list = LinkedList.new
+    @list.append(string_to_append) if string_to_append != nil
   end
 
   def append(string)

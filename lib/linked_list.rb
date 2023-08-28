@@ -77,9 +77,7 @@ class LinkedList
     else
       current_node = @head
       (position - 1).times do
-        if current_node == nil
-          break
-        end
+        break if current_node == nil
       current_node = current_node.next_node
       end
 
@@ -97,18 +95,14 @@ class LinkedList
 
     current_node = @head
     start_position.times do
-      if current_node == nil
-        break
-      end
+      break if current_node == nil
     current_node = current_node.next_node
     end
     
     string_output = ""
     length_counter = 1
     length.times do
-      if current_node == nil
-        break
-      end
+      break if current_node == nil
       string_output += current_node.data
       if current_node.next_node != nil && length_counter < length
         string_output += " "
@@ -124,9 +118,7 @@ class LinkedList
     current_node = @head
     
     until current_node == nil
-      if current_node.data == query
-        return true
-      end
+      return true if current_node.data == query
       current_node = current_node.next_node
     end
 
@@ -134,9 +126,7 @@ class LinkedList
   end
 
   def pop
-    if @head == nil
-      return
-    end
+    return if @head == nil
 
     removed_data = ""
 
