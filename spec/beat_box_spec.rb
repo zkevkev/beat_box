@@ -169,3 +169,25 @@ describe "#prepend" do
     expect(bb.list.find(0, 4)).to eq("woo hoo shu")
   end
 end
+
+describe "#reset_rate" do
+  it 'sets the rate to default' do
+    bb = BeatBox.new
+
+    bb.rate = 100
+    bb.reset_rate
+
+    expect(bb.rate).to eq(500)
+  end
+end
+
+describe "#reset_voice" do
+  it 'sets the voice to default' do
+    bb = BeatBox.new
+
+    bb.voice = "Cellos"
+    bb.reset_voice
+
+    expect(bb.voice).to eq("Boing")
+  end
+end
