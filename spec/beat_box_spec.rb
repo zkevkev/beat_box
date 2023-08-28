@@ -72,6 +72,15 @@ describe "#append" do
     expect(bb.list.head.data).to eq("deep")
     expect(bb.count).to eq(7)
   end
+
+  it 'will only add whitelisted beats' do
+    bb = BeatBox.new
+
+    bb.append("deep doo ditt")
+    bb.append("Mississippi")
+
+    expect(bb.all).to eq("deep doo ditt")
+  end
 end
 
 describe "#play" do

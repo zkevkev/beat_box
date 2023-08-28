@@ -7,9 +7,10 @@ class BeatBox
   end
 
   def append(string)
-    beats = string.split(' ')
-    beats.each do |beat|
-      @list.append(beat)
+    if whitelisted_beats
+      beats = string.split(' ')
+      beats.each do |beat|
+        @list.append(beat)
     end
   end
 
