@@ -13,13 +13,16 @@ class BeatBox
     end
   end
 
-  def count
-    @list.count
+  def prepend(string)
+    beats = string.split(' ')
+    passed_beats = whitelist_filter(beats)
+    passed_beats.reverse.each do |beat|
+      @list.prepend(beat)
+    end
   end
 
-  def play
-    beats = @list.to_string
-    `say -r 500 -v Boing "#{beats}"`
+  def count
+    @list.count
   end
 
   def all
@@ -34,5 +37,10 @@ class BeatBox
     end
 
     whitelisted_beats
+  end
+
+  def play
+    beats = @list.to_string
+    `say -r 500 -v Boing "#{beats}"`
   end
 end

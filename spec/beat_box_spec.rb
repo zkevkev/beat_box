@@ -49,8 +49,7 @@ describe "#append" do
 
     bb.append("deep doo ditt")
 
-    expect(bb.list.head.data).to eq("deep")
-    expect(bb.list.head.next_node.data).to eq("doo")
+    expect(bb.list.find(0, 3)).to eq("deep doo ditt")
     expect(bb.count).to eq(3)
   end
 
@@ -60,7 +59,7 @@ describe "#append" do
     bb.append("deep doo ditt")
     bb.append("woo hoo shu")
 
-    expect(bb.list.head.data).to eq("deep")
+    expect(bb.list.find(0 , 6)).to eq("deep doo ditt woo hoo shu")
     expect(bb.count).to eq(6)
   end
 
@@ -69,7 +68,7 @@ describe "#append" do
     
     bb.append("deep doo ditt woo hoo shu boo")
 
-    expect(bb.list.head.data).to eq("deep")
+    expect(bb.list.find(0, 7)).to eq("deep doo ditt woo hoo shu boo")
     expect(bb.count).to eq(7)
   end
 
@@ -117,5 +116,32 @@ describe "#whitelist_filter" do
     bb = BeatBox.new
 
     expect(bb.whitelist_filter(["doop", "deep", "Louisiana"])).to eq(["doop", "deep"])
+  end
+end
+
+describe "#prepend" do
+  it 'will add beats to the beginning of a list' do
+    bb = BeatBox.new
+
+    bb.append("deep doo ditt")
+    bb.prepend("woo hoo shu")
+
+    expect(bb.list.find(0, 6)).to eq("woo hoo shu deep doo ditt")
+  end
+
+  it 'will add beats to the beginning if the list is empty' do
+    bb = BeatBox.new
+
+    bb.prepend("woo hoo shu")
+
+    expect(bb.list.find(0, 3)).to eq("woo hoo shu")
+  end
+
+  it 'will only add whitelisted beats to the list' do
+    bb = BeatBox.new
+
+    bb.prepend("woo hoo shu Mississippi")
+
+    expect(bb.list.find(0, 4)).to eq("woo hoo shu")
   end
 end
