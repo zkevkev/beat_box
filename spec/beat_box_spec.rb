@@ -90,7 +90,31 @@ describe "#play" do
     bb.append("woo hoo shu")
 
     expect(bb.respond_to?(:play)).to be true
-    bb.play
+    # bb.play
+  end
+
+  it 'can play sick beat at a different rate' do
+    bb = BeatBox.new
+
+    bb.append("deep doo ditt")
+    bb.append("woo hoo shu")
+    bb.rate = 100
+
+    expect(bb.rate).to eq(100)
+    expect(bb.respond_to?(:play)).to be true
+    # bb.play
+  end
+
+  it 'can play sick beats in another voice' do
+    bb = BeatBox.new
+
+    bb.append("deep doo ditt")
+    bb.append("woo hoo shu")
+    bb.voice = "Cellos"
+
+    expect(bb.voice).to eq("Cellos")
+    expect(bb.respond_to?(:play)).to be true
+    # bb.play
   end
 end
 

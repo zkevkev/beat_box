@@ -1,9 +1,12 @@
 class BeatBox
   attr_reader :list
+  attr_accessor :rate, :voice
 
   def initialize(string_to_append = nil)
     @list = LinkedList.new
     @list.append(string_to_append) if string_to_append != nil
+    @rate = 500
+    @voice = "Boing"
   end
 
   def append(string)
@@ -42,6 +45,14 @@ class BeatBox
 
   def play
     beats = @list.to_string
-    `say -r 500 -v Boing "#{beats}"`
+    `say -r #{@rate} -v #{@voice} "#{beats}"`
+  end
+
+  def reset_rate
+    @rate = 500
+  end
+
+  def reset_voice
+    @voice = "Boing"
   end
 end
