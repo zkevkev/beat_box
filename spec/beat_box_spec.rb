@@ -111,3 +111,11 @@ describe "#all" do
     expect(bb.all).to eq("")
   end
 end
+
+describe "#whitelist_filter" do
+  it 'will filter out non-applicable beats' do
+    bb = BeatBox.new
+
+    expect(bb.whitelist_filter(["doop", "deep", "Louisiana"])).to eq(["doop", "deep"])
+  end
+end

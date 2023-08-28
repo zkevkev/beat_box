@@ -154,14 +154,4 @@ class LinkedList
 
     removed_data
   end
-
-  def whitelist_filter(beats)
-    whitelist = ["doop", "deep", "beep", "boop", "shi", "boo", "doo", "ditt", "woo", "hoo", "shu"]
-
-    whitelisted_beats = beats.select do |beat|
-      whitelist.includes?(beat)
-    end
-
-    whitelisted_beats
-  end
 end

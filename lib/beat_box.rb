@@ -1,16 +1,15 @@
 class BeatBox
   attr_reader :list
 
-  #whitelist needs to live in the LinkedList class somewhere (?)
   def initialize
     @list = LinkedList.new
   end
 
   def append(string)
-    if whitelisted_beats
-      beats = string.split(' ')
-      beats.each do |beat|
-        @list.append(beat)
+    beats = string.split(' ')
+    passed_beats = whitelist_filter(beats)
+    passed_beats.each do |beat|
+      @list.append(beat)
     end
   end
 
@@ -25,5 +24,15 @@ class BeatBox
 
   def all
     @list.to_string
+  end
+
+  def whitelist_filter(beats)
+    whitelist = ["doop", "deep", "beep", "boop", "shi", "boo", "doo", "ditt", "woo", "hoo", "shu"]
+
+    whitelisted_beats = beats.select do |beat|
+      whitelist.include?(beat)
+    end
+
+    whitelisted_beats
   end
 end

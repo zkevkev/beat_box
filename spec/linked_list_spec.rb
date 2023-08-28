@@ -271,11 +271,3 @@ describe "#pop" do
     expect(list.pop).to eq("doop")
   end
 end
-
-# describe "#whitelist_filter" do
-#   it 'will pass only whitelisted beats' do
-#     list = LinkedList.new
-#     list.append("doop")
-#     list.append("deep")
-#   end
-# end
