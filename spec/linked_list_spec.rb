@@ -16,6 +16,21 @@ RSpec.describe LinkedList do
   end
 end
 
+describe "#iterate_until_tail" do
+  it 'will iterate starting at the head and ending at the tail' do
+    list = LinkedList.new
+    
+    list.append("doop")
+    list.append("deep")
+    list.append("boop")
+    list.append("beep")
+    list.append("shi")
+    list.append("boo")
+
+    expect(list.iterate_until_tail.data).to eq("boo")
+  end
+end
+
 describe "#append" do
   it 'will append a node to the head if linked list has no head' do
     list = LinkedList.new
@@ -233,8 +248,6 @@ describe "#includes?" do
 
     expect(list.includes?("dep")).to be false
   end
-
-  #smoke test here?
 end
 
 describe "#pop" do

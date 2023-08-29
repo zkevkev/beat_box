@@ -5,7 +5,6 @@ class LinkedList
     @head = nil
   end
 
-  #can I modify this to use other places than append?
   def iterate_until_tail
     current_node = @head
 
