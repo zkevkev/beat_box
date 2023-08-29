@@ -6,8 +6,8 @@ class LinkedList
   end
 
   #can I modify this to use other places than append?
-  def iterate_until_tail(head)
-    current_node = head
+  def iterate_until_tail
+    current_node = @head
 
     until current_node.next_node == nil do
       current_node = current_node.next_node
@@ -22,7 +22,7 @@ class LinkedList
     if @head == nil
       @head = new_node
     else
-      tail = iterate_until_tail(@head)
+      tail = iterate_until_tail
       tail.next_node = new_node
     end
   end

@@ -10,7 +10,7 @@ class BeatBox
   end
 
   def append(string)
-    beats = string.split(' ')
+    beats = string.split
     passed_beats = whitelist_filter(beats)
     passed_beats.each do |beat|
       @list.append(beat)
@@ -18,7 +18,7 @@ class BeatBox
   end
 
   def prepend(string)
-    beats = string.split(' ')
+    beats = string.split
     passed_beats = whitelist_filter(beats)
     passed_beats.reverse.each do |beat|
       @list.prepend(beat)
